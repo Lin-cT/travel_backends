@@ -1,111 +1,72 @@
-# Flask Portfolio Starter
+Sure, here's a template for your backend repository based on the information you provided:
 
-Use this project to create a Flask Server.
+---
 
-GitHub link: https://github.com/nighthawkcoders/cpt
+# San Diego Travel Guide Backend
+
+Welcome to the backend repository for the San Diego Travel Guide project! This repository serves as the backend server for handling APIs and data management for the San Diego Travel Guide.
+
+GitHub link: [San Diego Travel Guide Backend](https://github.com/your-username/sandiego-travel-guide-backend)
 
 ## Getting Started
 
-> Quick steps that can be used with MacOS, WSL Ubuntu, or Ubuntu; this uses Python 3.9 or later as a prerequisite.
+Follow these steps to set up the backend server:
 
-- Open a Terminal, clone the project and then cd into the project area
-Install Python and then install Python dependencies for Flask, etc.
+1. Clone the repository:
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    git clone https://github.com/your-username/sandiego-travel-guide-backend.git
+    ```
 
-- Run from Terminal without VSCode
+2. Navigate to the project directory:
 
-  - Setup database and init data
-Run the Python server from the command line
+    ```bash
+    cd sandiego-travel-guide-backend
+    ```
+
+3. Install Python and dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Run the Flask server:
 
     ```bash
     python main.py
     ```
 
-### Open project in VSCode
-
-- Prepare VSCode and run
-
-  - From Terminal run VSCode
-
-    ```bash
-    cd ~/vscode/cpt
-    code .
-    ```
-
-  - Open Setting: Ctl-Shift P or Cmd-Shift
-    - Search Python: Select Interpreter
-    - Match interpreter to `which python` from terminal
-
-  - Select main.py and Play button
-  - Try the Play button and try to Debug
+5. Access the APIs locally at [http://127.0.0.1:8010/](http://127.0.0.1:8010/).
 
 ## Idea
 
-> The purpose of project is to serve APIs.  It is the backend piece of a Full-Stack project.  Review `api` folder in project for endpoints.
+The San Diego Travel Guide Backend serves as the backend piece of the San Diego Travel Guide Full-Stack project. It provides APIs for managing data related to attractions, itineraries, and user preferences.
 
 ### Hacks
-> Change the starter code to be your own.
 
-- Change the Bootstrap menu, find places to change Nighthawk information
-- Change the Home Page, and dress it up with ideas from your project.
-- Add some color and fun through VANTA Visuals (birds, halo, solar, net)
-- Show some practical and fun links (hrefs) like Twitter, Git, Youtube
-- Build a Sample Page (The table is provided as a guide to Jinja)
-- Change the project-specific links page
+Customize the starter code to suit your project needs:
 
-### Files and Directories in this Project
+- Implement additional endpoints for managing attractions, itineraries, and user preferences.
+- Secure APIs with JWT authentication.
+- Implement database migrations for schema updates and data migration.
 
-These are some of the key files and directories in this project
+### Files and Directories
 
-README.md: This file contains instructions for setting up the necessary tools and cloning the project. A README file is a standard component of all properly set-up GitHub projects.
+- **README.md**: Instructions for setting up and running the backend server.
+- **requirements.txt**: Lists dependencies required for the Flask server.
+- **main.py**: Entry point for running the Flask server.
+- **api**: Directory containing code for handling API endpoints.
+- **model**: Directory containing backend functionality implementation.
+- **templates**: Directory containing Jinja2 templates for rendering HTML pages (if applicable).
+- **projects**: Directory for setting up routes to static HTML pages (if applicable).
+- **.gitignore**: Specifies files and directories to be excluded from version control.
+- **migrate.sh**: Script for managing SQLite database schema and data migrations.
 
-requirements.txt: This file lists the dependencies required to turn this Python project into a Flask/Python project. It may also include other backend dependencies, such as dependencies for working with a database.
+## Contributing
 
-main.py: This Python source file is used to run the project. Running this file starts a Flask web server locally on localhost. During development, this is the file you use to run, test, and debug the project.
+Contributions to improve the San Diego Travel Guide Backend are welcome! Here's how you can contribute:
 
-Dockerfile and docker-compose.yml: These files are used to run and test the project in a Docker container. They allow you to simulate the project’s deployment on a server, such as an AWS EC2 instance. Running these files helps ensure that your tools and dependencies work correctly on different machines.
+- Submit bug reports or feature requests via GitHub Issues.
+- Fork the repository, make changes, and submit a pull request.
 
-instances: This directory is the standard location for storing data files that you want to remain on the server. For example, SQLite database files can be stored in this directory. Files stored in this location will persist after a web application restart, everything outside of instances will be recreated at restart.
-
-static: This directory is the standard location for files that you want to be cached by the web server. It is typically used for image files (JPEG, PNG, etc.) or JavaScript files that remain constant during the execution of the web server.
-
-api: This directory contains code that receives and responds to requests from external servers. It serves as the interface between the external world and the logic and code in the rest of the project.
-
-api/users:  These API's are guarded by @token_required, test these using Postman, first you must authenticate http://127.0.0.1:8010/api/users/authenticate using raw body JSON {"uid": "toby", "password": "123toby"} which will obtain a Cookie. Then you can use the API http://127.0.0.1:8010/api/users
-
-api/players: These API's are unguarded. The GET method can be run in the browser http://127.0.0.1:8010/api/players/.   PUT, POST, DELETE methods are supported and can be tested in POSTMAN. 
-
-model: This directory contains files that implement the backend functionality for many of the files in the api directory. For example, there may be files in the model directory that directly interact with the database.
-
-templates: This directory contains files and subdirectories used to support the home and error pages of the website.
-
-templates/layouts/base.html:  This is the Jinja2 template that defines the the head and body requirements for all pages within the site.  This includes navbar.html which provides the menu for the site.
-
-templates/index.html: This is the home page for the site.  It extends base.html and shows the usage of bootstrap cards.
-
-templates/table.html: This is a submenu page and it extends base.html and shows the usage of jQuery data table.
-
-projects: This directory contains files for setting up routes to static HTML pages.
-
-projects/project.py:  This Python file sets up routes to render template files.
-
-projects/templates/bp_projects:  This shows additional Jinja2 formatting such as nested extends and url_for.
-
-.gitignore: This file specifies elements to be excluded from version control. Files are excluded when they are derived and not considered part of the project’s original source. In the VSCode Explorer, you may notice some files appearing dimmed, indicating that they are intentionally excluded from version control based on the rules defined in .gitignore.
-
-### Implementation Summary
-
-#### July 2023
-
-- Update README with File Descriptions (anatomy)
-- Add JWT and add security features to the data
-- Add migrate.sh to support sqlite schema and data upgrade
-
-#### January 2024
-
-- Make this project a template for a Python backend server.
-- Add README entries for migrate.sh usage, database setup and migration
-- Add README entries for api/users and api/players
+---
