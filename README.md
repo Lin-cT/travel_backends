@@ -1,7 +1,3 @@
-Sure, here's a template for your backend repository based on the information you provided:
-
----
-
 # San Diego Travel Guide Backend
 
 Welcome to the backend repository for the San Diego Travel Guide project! This repository serves as the backend server for handling APIs and data management for the San Diego Travel Guide.
